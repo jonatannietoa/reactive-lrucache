@@ -41,6 +41,11 @@ public class LRUImpl implements LRU {
     }
 
     @Override
+    public LinkedHashMap<Integer, String> getLRU() {
+        return this.lruMap;
+    }
+
+    @Override
     public String toString(){
         String lruString = "";
         for (String value : lruMap.values()) {
