@@ -17,7 +17,7 @@ public class ReactiveLrucacheApplicationTests {
 
 	@Before
 	public void setUp(){
-		lru = new LRUImpl(3);
+		lru = LRUImpl.getInstance();
 	}
 
 	@Test
