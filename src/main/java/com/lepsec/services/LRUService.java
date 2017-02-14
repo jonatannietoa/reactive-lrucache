@@ -12,5 +12,5 @@ public interface LRUService {
 
     String getStringFromLRU(int id) throws Exception;
 
-    Observable<LinkedHashMap<Integer,String>> getLRUState();
+    LinkedHashMap<Integer,String> getLRUState();
 }

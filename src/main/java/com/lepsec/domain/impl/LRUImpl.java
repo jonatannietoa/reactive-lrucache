@@ -2,6 +2,7 @@ package com.lepsec.domain.impl;
 
 
 import com.lepsec.domain.LRU;
+import io.reactivex.Observable;
 
 import java.util.LinkedHashMap;
 
@@ -18,7 +19,7 @@ public class LRUImpl implements LRU {
     }
 
     public LRUImpl(int lruSize) {
-        this.lruMap = new LinkedHashMap<Integer, String>();
+        this.lruMap = new LinkedHashMap<>();
         this.lruSize = lruSize;
     }
 

@@ -7,6 +7,7 @@ import io.reactivex.Observable;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedHashMap;
+import java.util.List;
 
 /**
  * Created by jonatannietoa on 13/2/17.
@@ -35,8 +36,8 @@ public class LRUServiceImpl implements LRUService{
     }
 
     @Override
-    public Observable<LinkedHashMap<Integer, String>> getLRUState() {
-        return Observable.just(lru.getLRU());
+    public LinkedHashMap<Integer,String> getLRUState() {
+        return lru.getLRU();
     }
 
     private int getNewKey(){
