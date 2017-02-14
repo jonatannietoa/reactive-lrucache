@@ -1,6 +1,7 @@
 package com.lepsec.controllers;
 
 import com.lepsec.services.LRUService;
+import io.reactivex.Observable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,7 +31,7 @@ public class LRURestController {
     }
 
     @RequestMapping(value = "/lru/state")
-    public LinkedHashMap<Integer, String> getLRUState(){
+    public Observable<LinkedHashMap<Integer, String>> getLRUState(){
         return lruService.getLRUState();
     }
 }

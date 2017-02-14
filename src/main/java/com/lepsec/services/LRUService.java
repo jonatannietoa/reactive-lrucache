@@ -1,5 +1,7 @@
 package com.lepsec.services;
 
+import io.reactivex.Observable;
+
 import java.util.LinkedHashMap;
 
 /**
@@ -10,5 +12,5 @@ public interface LRUService {
 
     String getStringFromLRU(int id) throws Exception;
 
-    LinkedHashMap<Integer,String> getLRUState();
+    Observable<LinkedHashMap<Integer,String>> getLRUState();
 }
