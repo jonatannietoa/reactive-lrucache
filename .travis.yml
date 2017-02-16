@@ -3,5 +3,13 @@ language: java
 jdk:
   - oraclejdk8
 
+addons:
+  sonarqube:
+    token:
+      secure: "UoVxcl9r4MddBakNvX2zEZvfSH0z9+2HkJ+12UbhftHlNXGvuf48OAl1tihhF8nyKju+kwhHVvBdP2bwuYjPOn+cWND7a46Pl4CkMZskRT7qhkS9ZnfPTEUUs9DHkdgtrVM2DlGpIjf1EvGNKDlspyIl2UW2vm5TTPcYdUXr0B8HzddZIK+byb6IRup0BCJAB+ndo52hq5hZU3WBSDfr7lJ3ooBYDdlNIIIPE9d/4/M7xIbNPftmJLkSQJG+pD6mu+rwvBrd3QURuq07r6wIBg7G8VNeqYfWk+o9BeqvN/5joxUUK+CBx3XOc+A+xDwMgO8lh+QDWuybKPGV9BiAweoQwMYIa4Q1Gf7cmq/zJofVmyF9I84WtXvXbEKvLhtkdgnFHQ6Eevo2qZAX3D2KhwulGUKFWs9gsRIyYmM1FrjCkM+dZiW6lb2FLHQ+JPoRjyj6alrXLiFmIGQMyHjoRPIQ5IWoZ288WJeeYLjU/Au9fRSikWMzeOzlK734mJWrMBbXzQzPGLAGfc5d7tess8Y2bxSnSszGRrAm2HIxkvXKIgiqi78wCZ7kBKld0znwal0yirS+/mhV3Gnk1ITflQ4cI1kzhuC/YbyNvBvL/QAGpt2aNm1Vs1Jni41bh/qksgi22lXOzvM3hKYrs6oIxkM+j/FG8NpO8H8OG59sMxk="
+  branches:
+    - master
+    
 script:
   mvn verify -B
+  sonar-scanner
