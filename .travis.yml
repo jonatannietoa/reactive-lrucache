@@ -11,5 +11,5 @@ addons:
     - master
     
 script:
-  mvn verify -B
-  sonar-scanner
+  - mvn verify -B
+  - sonar-scanner
