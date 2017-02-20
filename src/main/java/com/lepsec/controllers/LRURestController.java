@@ -34,7 +34,7 @@ public class LRURestController {
     }
 
     @RequestMapping(value = "/lru/{key}")
-    public String getStringByKey(@PathVariable int key) throws Exception {
+    public String getStringByKey(@PathVariable int key) throws NullPointerException {
         return lruService.getStringFromLRU(key);
     }
 
