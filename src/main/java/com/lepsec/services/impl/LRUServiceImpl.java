@@ -3,11 +3,9 @@ package com.lepsec.services.impl;
 import com.lepsec.domain.LRU;
 import com.lepsec.domain.impl.LRUImpl;
 import com.lepsec.services.LRUService;
-import io.reactivex.Observable;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedHashMap;
-import java.util.List;
+import java.util.Map;
 
 /**
  * Created by jonatannietoa on 13/2/17.
@@ -31,12 +29,12 @@ public class LRUServiceImpl implements LRUService{
     }
 
     @Override
-    public String getStringFromLRU(int key) throws Exception {
+    public String getStringFromLRU(int key) throws NullPointerException {
         return lru.get(key);
     }
 
     @Override
-    public LinkedHashMap<Integer,String> getLRUState() {
+    public Map<Integer,String> getLRUState() {
         return lru.getLRU();
     }
 

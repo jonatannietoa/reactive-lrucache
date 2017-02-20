@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.LinkedHashMap;
-import java.util.concurrent.TimeUnit;
+import java.util.Map;
 
 /**
  * Created by jonatannietoa on 13/2/17.
@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 @RequestMapping("/api")
 public class LRURestController {
     private LRUService lruService;
-    private LinkedHashMap<Integer,String> linkedHashMap;
+    private Map<Integer,String> linkedHashMap;
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
     @Autowired
@@ -39,11 +39,11 @@ public class LRURestController {
     }
 
     @RequestMapping(value = "/lru/state")
-    public LinkedHashMap<Integer,String> getLRUState() throws InterruptedException {
+    public Map<Integer,String> getLRUState() throws InterruptedException {
 
-        ResourceSubscriber<LinkedHashMap<Integer,String>> subscriber = new ResourceSubscriber<LinkedHashMap<Integer,String>>() {
+        ResourceSubscriber<Map<Integer,String>> subscriber = new ResourceSubscriber<Map<Integer,String>>() {
             @Override
-            public void onNext(LinkedHashMap<Integer,String> s) {
+            public void onNext(Map<Integer,String> s) {
                 linkedHashMap = s;
             }
 
