@@ -27,7 +27,7 @@ public class ReactiveLrucacheApplicationTests {
 		lru.put(3, "ccc");
 		lru.put(4, "ddd");
 
-		assertEquals(lru.toString(), "bbb ccc ddd ");
+		assertEquals(lru.toString(), "bbbcccddd");
 	}
 
 	@Test
@@ -38,7 +38,7 @@ public class ReactiveLrucacheApplicationTests {
 		lru.get(1);
 		lru.put(4, "ddd");
 
-		assertEquals(lru.toString(), "ccc aaa ddd ");
+		assertEquals(lru.toString(), "cccaaaddd");
 	}
 
 	@Test
@@ -49,7 +49,7 @@ public class ReactiveLrucacheApplicationTests {
 		lru.get(2);
 		lru.put(4, "ddd");
 
-		assertEquals(lru.toString(), "ccc bbb ddd ");
+		assertEquals(lru.toString(), "cccbbbddd");
 	}
 
 	@Test(expected = NullPointerException.class)

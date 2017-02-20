@@ -1,8 +1,6 @@
 package com.lepsec.domain;
 
-import io.reactivex.Observable;
-
-import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by jonatannietoa on 13/2/17.
@@ -10,7 +8,7 @@ import java.util.LinkedHashMap;
 public interface LRU {
     void put(int key, String value);
 
-    String get(int key) throws Exception;
+    String get(int key) throws NullPointerException;
 
-    LinkedHashMap<Integer,String> getLRU();
+    Map<Integer,String> getLRU();
 }

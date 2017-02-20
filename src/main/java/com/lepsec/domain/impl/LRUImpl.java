@@ -2,16 +2,16 @@ package com.lepsec.domain.impl;
 
 
 import com.lepsec.domain.LRU;
-import io.reactivex.Observable;
 
 import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * Created by jonatannietoa on 13/2/17.
  */
 public class LRUImpl implements LRU {
     private static LRUImpl ourInstance = new LRUImpl(3);
-    private LinkedHashMap<Integer,String> lruMap;
+    private Map<Integer,String> lruMap;
     private int lruSize;
 
     public static LRUImpl getInstance() {
@@ -23,6 +23,7 @@ public class LRUImpl implements LRU {
         this.lruSize = lruSize;
     }
 
+    @Override
     public void put(int key, String value) {
         if(lruMap.values().size()>=lruSize){
             lruMap.remove(lruMap.keySet().iterator().next());
@@ -30,7 +31,8 @@ public class LRUImpl implements LRU {
         lruMap.put(key, value);
     }
 
-    public String get(int key) throws Exception {
+    @Override
+    public String get(int key) throws NullPointerException {
         if(lruMap.get(key)!=null){
             final String value = lruMap.get(key);
             lruMap.remove(key);
@@ -42,16 +44,16 @@ public class LRUImpl implements LRU {
     }
 
     @Override
-    public LinkedHashMap<Integer, String> getLRU() {
+    public Map<Integer, String> getLRU() {
         return this.lruMap;
     }
 
     @Override
     public String toString(){
-        String lruString = "";
+        StringBuilder bld = new StringBuilder();
         for (String value : lruMap.values()) {
-            lruString = lruString + value + " ";
+            bld.append(value);
         }
-        return lruString;
+        return bld.toString();
     }
 }
