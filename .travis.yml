@@ -9,7 +9,6 @@ addons:
       secure: "sQhjIpKkY9tWxqxmG18/UFghyrvCss8D3hlAqWM109rRRgYojpZuupMSIKi/P+sKVL6PvhJJsEdn/SfuJozWdTV8q/uTInuy10HLm2+h/0dN4FKGfSvXt6afAYNf1p8RHeOFItdEJaVW/xk9qPqXWiwGTOyOD/Qyu6/By0eZsZjPkoyVevTJAasxS1JO4QKm4FEs6CR7LQRYX8RGPZIKO8KsuE0d0EARK/J6fIcFQ/2RD7IIwJ3+9iVNeBhABw8bCcVqxmASuqpfnEx6KVrQ3Pk6j8L2Pwai7RccIcuE9lLA2Qv2h8FBkL0r2KUpK6rIqrk7iJ3sl6u4Slu2ndOcMIUd+9XpA84+wuj7zbJLMCm90bS0EjQCU/9AeNyEbxpG9eairDN4vVj/aMBfpX+AT6LXSkF97vQlMAo+e1uF+uFUwaAr3t6yGPMEoVL6dcHzqTcLLhrhx7PDMSv6qFLGGSoh0m7wqTHWVI5z0hmjDjsmH2uq4xxzcTqgPXBFwLaRXCl7m3+vtGNwo0uODXk8jEwds41kcQBJFmEiFvJOgUycuWw10aO/I6uZJQeUfjuAZgjNOfWsIk1SOay96RmvUrQ6kTW4RQPSzOvTjuhu4vzROZP5BVrP3coTQsiITGBjnWcMf5HWuZv4OuNDZE2ABHCdcl93ZEWkp2njDvbAJfM="
   branches:
     - master
-    - feature/*
     
 script:
   - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
